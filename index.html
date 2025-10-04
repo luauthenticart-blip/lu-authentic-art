@@ -44,6 +44,30 @@
             padding: 0 20px;
         }
 
+        /* Botón General */
+        .btn {
+            display: inline-block;
+            background: var(--fucsia);
+            color: var(--blanco);
+            padding: 14px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(225, 0, 122, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn:hover {
+            background: var(--fucsia-oscuro);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(225, 0, 122, 0.5);
+        }
+
         /* Títulos y Secciones */
         .section-title {
             text-align: center;
@@ -69,38 +93,46 @@
             background: var(--fucsia);
             margin: 15px auto 0;
             border-radius: 2px;
-            /* Elegante efecto de línea */
         }
         
-        /* 🌟 Efecto de Brillo/Neón para Títulos - Mejor Profesionalismo */
+        /* 🌟 Efecto de Brillo/Neón para Títulos - Mejor Profesionalismo (Opcional) */
         .section-title.neon h2 {
             color: var(--fucsia);
             text-shadow: 0 0 5px var(--fucsia-oscuro), 0 0 10px var(--fucsia-oscuro);
             transition: text-shadow 0.5s;
         }
         
-        /* Botón General */
-        .btn {
-            display: inline-block;
-            background: var(--fucsia);
-            color: var(--blanco);
-            padding: 14px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            box-shadow: 0 6px 20px rgba(225, 0, 122, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid transparent;
-            position: relative;
-            z-index: 1;
+        /* Decoraciones de flores y mariposas (Mantenidas del primer código) */
+        .flor-decorativa {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.1;
+            z-index: 0;
         }
         
-        .btn:hover {
-            background: var(--fucsia-oscuro);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(225, 0, 122, 0.5);
+        .flor-1 { top: 10%; left: 5%; transform: rotate(15deg); }
+        .flor-2 { top: 25%; right: 7%; transform: rotate(-10deg); }
+        .flor-3 { bottom: 15%; left: 8%; transform: rotate(25deg); }
+        .flor-4 { bottom: 30%; right: 5%; transform: rotate(-15deg); }
+        
+        .mariposa {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.15;
+            z-index: 0;
+            animation: flotar 8s infinite ease-in-out;
+        }
+        
+        .mariposa-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .mariposa-2 { top: 40%; right: 15%; animation-delay: 2s; }
+        .mariposa-3 { bottom: 20%; left: 15%; animation-delay: 4s; }
+        .mariposa-4 { bottom: 40%; right: 10%; animation-delay: 6s; }
+        
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
 
         /* --- Header --- */
@@ -120,7 +152,7 @@
         }
 
         .header-logo img {
-            height: 50px; /* Tamaño del logo ajustado */
+            height: 50px; 
             display: block;
         }
         
@@ -137,7 +169,7 @@
             text-decoration: none;
             color: var(--negro);
             font-weight: 500;
-            transition: color 0.3s, border-bottom 0.3s;
+            transition: color 0.3s;
             padding: 5px 0;
             position: relative;
         }
@@ -161,13 +193,6 @@
             width: 100%;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--negro);
-        }
-        
         /* --- Hero Section --- */
         .hero {
             padding: 120px 0 80px;
@@ -202,15 +227,17 @@
             height: auto;
             display: block;
             max-width: 100%;
-            border-radius: 10px; /* Un toque suave */
+            border-radius: 10px; 
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px; /* Mayor separación del botón */
             color: var(--negro);
+            position: relative;
+            z-index: 1;
             font-weight: 300;
         }
 
@@ -218,169 +245,159 @@
         .about {
             padding: 100px 0;
             background-color: var(--blanco);
+            position: relative;
         }
         
         .about-content {
             display: flex;
             align-items: center;
-            gap: 70px;
+            gap: 50px;
         }
         
         .about-text {
             flex: 1;
+            position: relative;
+            z-index: 1;
         }
         
         .about-text h3 {
             font-family: var(--font-heading);
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: var(--fucsia);
+            font-size: 2.2rem; /* Más grande */
+            margin-bottom: 20px;
+            color: var(--fucsia); /* Color de acento */
         }
         
         .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 1.1rem; /* Texto más legible */
         }
         
         .about-photo {
             flex: 1;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
         .about-photo img {
             width: 100%;
-            max-width: 400px;
-            border-radius: 50%; /* Foto en formato circular para un look más personal */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 5px solid var(--dorado-claro);
+            max-width: 380px; /* Tamaño ligeramente mayor */
+            border-radius: 50%; /* Foto en círculo para un toque elegante */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
             transition: transform 0.3s;
         }
-
         .about-photo img:hover {
-             transform: scale(1.03);
+            transform: scale(1.02);
         }
         
         /* --- Services Section --- */
         .services {
             padding: 100px 0;
-            background-color: var(--gris-fondo);
+            background-color: var(--gris-fondo); /* Fondo diferente */
+            position: relative;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas un poco más flexibles */
             gap: 30px;
         }
         
         .service-card {
             background-color: var(--blanco);
-            border-radius: 15px;
-            padding: 35px;
+            border-radius: 15px; /* Bordes más redondeados */
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra más pronunciada */
+            transition: all 0.3s;
             position: relative;
+            z-index: 1;
             overflow: hidden;
-            border: 1px solid rgba(225, 0, 122, 0.1); /* Borde sutil */
+            border-bottom: 4px solid var(--fucsia); /* Línea inferior en lugar de superior */
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--fucsia-claro);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--fucsia), var(--dorado));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         
         .service-icon {
-            width: 70px;
+            width: 70px; /* Tamaño ligeramente más pequeño */
             height: 70px;
-            background: var(--dorado);
+            background: var(--dorado); /* Color fijo dorado */
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--blanco);
-            font-size: 2rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            /* Usando emojis más modernos para los íconos */
+            font-size: 2rem; /* Icono más grande */
+            box-shadow: 0 5px 15px rgba(196, 154, 51, 0.4);
         }
         
         .service-card h3 {
             font-family: var(--font-heading);
             margin-bottom: 10px;
-            color: var(--fucsia-oscuro);
+            color: var(--negro);
             font-size: 1.4rem;
         }
-        
         .service-card p {
             font-size: 0.95rem;
-            color: #555;
         }
         
         /* --- Gallery Section --- */
         .gallery {
             padding: 100px 0;
             background-color: var(--blanco);
+            position: relative;
         }
 
         .gallery h3 {
             font-family: var(--font-heading);
-            color: var(--negro);
             font-size: 1.8rem;
-            margin-top: 50px;
-            border-bottom: 2px solid var(--gris-fondo);
-            padding-bottom: 10px;
-            margin-bottom: 30px !important;
+            color: var(--fucsia);
+            margin: 40px 0 20px !important; /* Sobreescribe el inline style */
+            text-align: center;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
+            gap: 15px; /* Espacio más pequeño entre imágenes */
         }
         
         .gallery-item {
-            height: 300px;
-            border-radius: 10px;
+            height: 280px; /* Altura uniforme */
+            background-color: var(--gris-claro);
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.3s;
+            transition: transform 0.5s ease-in-out;
         }
-
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
         /* --- Contact Section --- */
         .contact {
             padding: 100px 0;
             background-color: var(--gris-fondo);
+            position: relative;
         }
         
         .contact-content {
@@ -388,71 +405,78 @@
             gap: 50px;
         }
         
-        .contact-info,
-        .contact-form {
+        .contact-info {
             flex: 1;
             background-color: var(--blanco);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
         }
         
-        .contact-info h3,
-        .contact-form h3 {
+        .contact-info h3 {
             font-family: var(--font-heading);
             margin-bottom: 30px;
-            color: var(--fucsia);
+            color: var(--fucsia-oscuro);
             font-size: 1.8rem;
-            border-bottom: 1px solid var(--gris-fondo);
+            border-bottom: 2px solid var(--gris-claro);
             padding-bottom: 10px;
         }
         
         .contact-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            gap: 15px;
+            align-items: flex-start; /* Alineación superior */
+            margin-bottom: 30px;
         }
         
         .contact-icon {
-            color: var(--fucsia);
+            width: 50px;
+            height: 50px;
+            background: var(--fucsia);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--blanco);
             font-size: 1.5rem;
-            min-width: 30px;
-            text-align: center;
+            box-shadow: 0 3px 10px rgba(225, 0, 122, 0.3);
         }
-        
+
         .contact-item p {
             margin: 0;
             font-size: 1.05rem;
         }
-
-        .contact-item a {
-            color: var(--negro);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--fucsia);
-        }
         
+        .contact-form {
+            flex: 1;
+            background-color: var(--blanco);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Se necesita un formulario funcional para el backend, por ahora solo el estilo */
         .form-group {
             margin-bottom: 20px;
         }
         
         .form-group label {
-            font-weight: 600;
-            color: var(--negro);
-            margin-bottom: 10px;
             display: block;
+            margin-bottom: 8px;
+            color: var(--negro);
+            font-weight: 600;
         }
         
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 8px; /* Bordes más suaves */
             background-color: var(--gris-claro);
             transition: border-color 0.3s, box-shadow 0.3s;
             font-size: 1rem;
@@ -461,8 +485,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--fucsia);
-            box-shadow: 0 0 5px rgba(225, 0, 122, 0.3);
-            background-color: var(--blanco);
+            box-shadow: 0 0 5px rgba(225, 0, 122, 0.5);
             outline: none;
         }
         
@@ -470,10 +493,10 @@
             height: 150px;
             resize: vertical;
         }
-        
+
         /* --- Footer --- */
         footer {
-            background-color: var(--negro);
+            background: var(--negro); /* Fondo negro sólido */
             color: var(--blanco);
             padding: 50px 0 30px;
             text-align: center;
@@ -491,107 +514,98 @@
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--dorado);
+            width: 50px;
+            height: 50px;
+            background: var(--dorado); 
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 10px;
-            color: var(--negro); /* Iconos oscuros sobre dorado */
+            color: var(--blanco);
             text-decoration: none;
             transition: all 0.3s;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            box-shadow: 0 3px 10px rgba(196, 154, 51, 0.5);
         }
         
         .social-link:hover {
-            background: var(--fucsia);
-            color: var(--blanco);
+            background: var(--dorado-claro);
             transform: scale(1.1);
         }
         
         .copyright {
-            margin-top: 20px;
+            margin-top: 30px;
             color: #aaa;
             font-size: 0.9rem;
         }
         
-        /* 📱 Responsive Design */
+        /* --- Responsive --- */
         @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
+            .about-content, .contact-content {
                 flex-direction: column;
-                gap: 40px;
+                gap: 30px;
             }
-
-            .about-text, .about-photo, .contact-info, .contact-form {
-                width: 100%;
-            }
-
             .about-photo img {
-                max-width: 300px;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
+                max-width: 250px;
             }
         }
 
         @media (max-width: 768px) {
             .header-content {
-                flex-wrap: wrap;
-            }
-
-            nav {
-                width: 100%;
-                order: 3;
-                display: none; /* Ocultar por defecto para el menú hamburguesa */
                 flex-direction: column;
-                text-align: center;
-                margin-top: 10px;
-                padding-bottom: 10px;
             }
             
-            nav.open {
-                display: flex;
-            }
-
             nav ul {
-                flex-direction: column;
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav ul li {
-                margin: 10px 0;
-            }
-
-            .menu-toggle {
-                display: block; /* Mostrar botón hamburguesa */
+                margin: 5px 10px;
             }
             
             .hero {
-                padding: 60px 0;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
+                padding: 80px 0 50px;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-logo {
+                max-width: 280px;
+            }
+
+            .flor-decorativa, .mariposa {
+                display: none;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
     </style>
 </head>
 <body>
+    <div class="flor-decorativa flor-1">🌸</div>
+    <div class="flor-decorativa flor-2">🌺</div>
+    <div class="flor-decorativa flor-3">🌷</div>
+    <div class="flor-decorativa flor-4">💮</div>
+    
+    <div class="mariposa mariposa-1">🦋</div>
+    <div class="mariposa mariposa-2">🦋</div>
+    <div class="mariposa mariposa-3">🦋</div>
+    <div class="mariposa mariposa-4">🦋</div>
 
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="header-logo">
-                    <img src="logo1.jpg" alt="Lu AUTHENTIC ART Logo">
+                    <img src="logo1.jpg" alt="Lu AUTHENTIC ART">
                 </div>
-                <nav id="main-nav">
+                <nav>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#sobre-mi">Sobre Mí</a></li>
@@ -600,9 +614,6 @@
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
-                <div class="menu-toggle" id="menu-button">
-                    <i class="fas fa-bars"></i>
-                </div>
             </div>
         </div>
     </header>
@@ -612,158 +623,232 @@
             <div class="hero-logo">
                 <img src="logo1.jpg" alt="Lu AUTHENTIC ART">
             </div>
-            <p>El Arte de la Belleza Auténtica. Estilista profesional especializada en manicure, pedicura, peinados y maquillaje para elevar tu estilo en cualquier ocasión.</p>
-            <a href="https://wa.me/573212439041" target="_blank" class="btn">Agenda tu Transformación ✨</a>
+            <p>Estilista profesional especializada en **manicura, pedicura, peinados y maquillaje** para toda ocasión</p>
+            <a href="#contacto" class="btn">Reserva tu cita</a>
         </div>
     </section>
 
     <section class="about" id="sobre-mi">
         <div class="container">
-            <div class="section-title neon">
-                <h2>Conoce a la Artista</h2>
+            <div class="section-title">
+                <h2>Sobre Mí</h2>
             </div>
             <div class="about-content">
                 <div class="about-photo">
-                    <img src="lu1.jpg" alt="Luisa Ávila Cruz - Estilista Profesional">
+                    <img src="lu1.jpg" alt="Luisa Ávila Cruz - Estilista Profesional"> 
                 </div>
                 <div class="about-text">
                     <h3>LUISA ÁVILA CRUZ</h3>
-                    <p>Soy Luisa Ávila Cruz, tu estilista profesional con una profunda pasión por el embellecimiento y el cuidado personal. Mi filosofía es simple: la belleza debe ser **auténtica** y reflejar la esencia de quien eres.</p>
-                    
-                    <p>En Lu AUTHENTIC ART, no solo recibes un servicio; vives una experiencia de lujo y dedicación. Utilizo productos premium y las técnicas más innovadoras del mercado para garantizar resultados impecables y duraderos, ya sea en un diseño de uñas, un peinado de ensueño o un maquillaje impactante.</p>
-                    
-                    <p>Mi compromiso es superar tus expectativas. Permíteme crear el look perfecto que te haga sentir radiante, segura y, sobre todo, auténtica.</p>
-                    <a href="#galeria" class="btn" style="padding: 10px 25px; font-size: 0.9rem;">Ver Mi Portafolio</a>
+                    <p>Soy una estilista profesional con años de experiencia en el mundo de la belleza y el cuidado personal. Mi pasión es realzar la **belleza natural** de cada persona, ofreciendo servicios de alta calidad con atención personalizada.</p>
+                    <p>En Lu AUTHENTIC ART, cada cliente recibe un trato **único y especial**, utilizando productos de primera calidad y las técnicas más actualizadas del mercado.</p>
+                    <p>Mi objetivo es que salgas de mi espacio sintiéndote renovada, confiada y hermosa, tanto por fuera como por dentro. ¡El arte de la belleza es mi pasión!</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <hr>
 
     <section class="services" id="servicios">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestros Servicios de Arte y Belleza</h2>
+                <h2>Servicios</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
-                    <h3>Manicure & Pedicure Premium</h3>
-                    <p>Desde el esmaltado semipermanente de alta duración hasta el diseño de uñas acrílicas esculpidas con técnicas de vanguardia.</p>
+                    <h3>Manicure Tradicional</h3>
+                    <p>Servicio completo de manicure tradicional para unas uñas impecables y bien cuidadas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Manicure Semipermanente</h3>
+                    <p>Esmaltado semipermanente de larga duración con una amplia gama de colores y diseños.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-spa"></i></div>
-                    <h3>Spa de Manos y Pies</h3>
-                    <p>Tratamientos relajantes y revitalizantes con exfoliación profunda, hidratación intensiva y masajes para una piel sedosa.</p>
+                    <h3>Spa de Manos Relajante</h3>
+                    <p>Tratamiento completo de spa para manos que incluye exfoliación, hidratación y masaje relajante.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-star-of-life"></i></div>
+                    <h3>Uñas Acrílicas Esculpidas</h3>
+                    <p>Creación de uñas acrílicas esculpidas en todas las técnicas para un look espectacular.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-foot"></i></div>
+                    <h3>Pedicure Tradicional</h3>
+                    <p>Servicio completo de pedicure tradicional para unos pies saludables y hermosos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Pedicure Semipermanente</h3>
+                    <p>Esmaltado semipermanente en pies con diseños personalizados y larga duración.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hot-tub"></i></div>
+                    <h3>Spa de Pies Relajante</h3>
+                    <p>Experiencia de spa completa para pies que incluye exfoliación, hidratación y masaje revitalizante.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-cut"></i></div>
                     <h3>Peinados y Recogidas</h3>
-                    <p>Estilismo capilar para cualquier evento: peinados de novia, quinceañeras, eventos formales o looks casuales de tendencia.</p>
+                    <p>Peinados y recogidas elegantes para toda ocasión, desde eventos formales hasta looks casuales.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
                     <h3>Maquillaje Profesional</h3>
-                    <p>Maquillaje social y artístico que resalta tus rasgos y se adapta perfectamente al tono de tu piel y a la ocasión.</p>
+                    <p>Maquillaje social y artístico profesional adaptado a tus necesidades y preferencias.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <hr>
 
     <section class="gallery" id="galeria">
         <div class="container">
-            <div class="section-title neon">
-                <h2>Galería de Arte Auténtico</h2>
+            <div class="section-title">
+                <h2>Galería de Trabajos</h2>
             </div>
 
-            <h3 style="text-align:center;">Uñas y Diseño</h3>
+            <h3>Uñas</h3>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="unas1.jpg" alt="Diseño de Uñas Acrílicas"></div>
-                <div class="gallery-item"><img src="unas2.jpg" alt="Manicure Semipermanente"></div>
-                <div class="gallery-item"><img src="unas3.jpg" alt="Arte en Uñas"></div>
-                <div class="gallery-item"><img src="unas4.jpg" alt="Uñas Esculpidas"></div>
-                <div class="gallery-item"><img src="unas5.jpg" alt="Diseño Minimalista"></div>
-                <div class="gallery-item"><img src="unas6.jpg" alt="Uñas de Gel"></div>
+                <div class="gallery-item"><img src="unas1.jpg" alt="Uñas 1"></div>
+                <div class="gallery-item"><img src="unas2.jpg" alt="Uñas 2"></div>
+                <div class="gallery-item"><img src="unas3.jpg" alt="Uñas 3"></div>
+                <div class="gallery-item"><img src="unas4.jpg" alt="Uñas 4"></div>
+                <div class="gallery-item"><img src="unas5.jpg" alt="Uñas 5"></div>
+                <div class="gallery-item"><img src="unas6.jpg" alt="Uñas 6"></div>
+                <div class="gallery-item"><img src="unas7.jpg" alt="Uñas 7"></div>
+                <div class="gallery-item"><img src="unas8.jpg" alt="Uñas 8"></div>
+                <div class="gallery-item"><img src="unas9.jpg" alt="Uñas 9"></div>
+                <div class="gallery-item"><img src="unas10.jpg" alt="Uñas 10"></div>
+                <div class="gallery-item"><img src="unas11.jpg" alt="Uñas 11"></div>
+                <div class="gallery-item"><img src="unas12.jpg" alt="Uñas 12"></div>
             </div>
 
-            <h3 style="text-align:center;">Maquillaje y Peinado para Eventos</h3>
+            <h3>Quinceaños</h3>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="quinces.jpg" alt="Maquillaje Quinceañera"></div>
-                <div class="gallery-item"><img src="novia1.jpg" alt="Peinado y Maquillaje Novia"></div>
-                <div class="gallery-item"><img src="social1.jpg" alt="Maquillaje Social"></div>
-                <div class="gallery-item"><img src="sesion1.jpg" alt="Maquillaje Sesión de Fotos"></div>
-                <div class="gallery-item"><img src="novia3.jpg" alt="Recogido de Novia"></div>
-                <div class="gallery-item"><img src="social9.jpg" alt="Peinado para Fiesta"></div>
+                <div class="gallery-item"><img src="quinces.jpg" alt="Quinces"></div>
+                <div class="gallery-item"><img src="quinces1.jpg" alt="Quinces 1"></div>
+                <div class="gallery-item"><img src="quinces2.jpg" alt="Quinces 2"></div>
+                <div class="gallery-item"><img src="quinces3.jpg" alt="Quinces 3"></div>
+                <div class="gallery-item"><img src="quinces4.jpg" alt="Quinces 4"></div>
+            </div>
+
+            <h3>Novias</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="novia1.jpg" alt="Novia 1"></div>
+                <div class="gallery-item"><img src="novia2.jpg" alt="Novia 2"></div>
+                <div class="gallery-item"><img src="novia3.jpg" alt="Novia 3"></div>
+                <div class="gallery-item"><img src="novia4.jpg" alt="Novia 4"></div>
+                <div class="gallery-item"><img src="novia5.jpg" alt="Novia 5"></div>
+                <div class="gallery-item"><img src="novia6.jpg" alt="Novia 6"></div>
+            </div>
+
+            <h3>Social</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="social1.jpg" alt="Social 1"></div>
+                <div class="gallery-item"><img src="social2.jpg" alt="Social 2"></div>
+                <div class="gallery-item"><img src="social3.jpg" alt="Social 3"></div>
+                <div class="gallery-item"><img src="social4.jpg" alt="Social 4"></div>
+                <div class="gallery-item"><img src="social5.jpg" alt="Social 5"></div>
+                <div class="gallery-item"><img src="social6.jpg" alt="Social 6"></div>
+                <div class="gallery-item"><img src="social7.jpg" alt="Social 7"></div>
+                <div class="gallery-item"><img src="social8.jpg" alt="Social 8"></div>
+                <div class="gallery-item"><img src="social9.jpg" alt="Social 9"></div>
+            </div>
+
+            <h3>Social Gráfico</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="socialgr1.jpg" alt="Social Gráfico 1"></div>
+                <div class="gallery-item"><img src="socialgr2.jpg" alt="Social Gráfico 2"></div>
+                <div class="gallery-item"><img src="socialgr3.jpg" alt="Social Gráfico 3"></div>
+                <div class="gallery-item"><img src="socialgr4.jpg" alt="Social Gráfico 4"></div>
+            </div>
+
+            <h3>Sesión de Fotos</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="sesion1.jpg" alt="Sesión 1"></div>
+                <div class="gallery-item"><img src="sesion2.jpg" alt="Sesión 2"></div>
+                <div class="gallery-item"><img src="sesion3.jpg" alt="Sesión 3"></div>
+                <div class="gallery-item"><img src="sesion4.jpg" alt="Sesión 4"></div>
+                <div class="gallery-item"><img src="sesion5.jpg" alt="Sesión 5"></div>
             </div>
         </div>
     </section>
+
+    <hr>
 
     <section class="contact" id="contacto">
         <div class="container">
             <div class="section-title">
-                <h2>Agenda Tu Cita</h2>
+                <h2>Contacto</h2>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Hablemos de tu Próximo Look</h3>
+                    <h3>Información de Contacto</h3>
                     <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                         <div>
-                            <p><strong>Teléfono/WhatsApp:</strong> <a href="tel:+573212439041">+(57) 321 243 9041</a></p>
+                            <p>WhatsApp:</p>
+                            <p><strong>3212439041</strong></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fab fa-instagram"></i></div>
                         <div>
-                            <p><strong>Síguenos:</strong></p>
-                            <p><a href="https://instagram.com/luisa.beautyx" target="_blank">@luisa.beautyx</a> (Maquillaje/Peinados)</p>
-                            <p><a href="https://instagram.com/authentic.nails.l" target="_blank">@authentic.nails.l</a> (Uñas)</p>
+                            <p>Instagram:</p>
+                            <p><strong>@luisa.beautyx</strong></p>
+                            <p><strong>@authentic.nails.l</strong></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-user-circle"></i></div>
+                        <div class="contact-icon"><i class="fas fa-user-tie"></i></div>
                         <div>
-                            <p><strong>Estilista:</strong> Luisa Ávila Cruz</p>
+                            <p>Estilista Profesional:</p>
+                            <p><strong>Luisa Ávila Cruz</strong></p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envía un Mensaje</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Servicio de Interés</label>
+                            <input type="text" id="servicio" name="servicio">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer id="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="social-links">
-                    <a href="https://instagram.com/luisa.beautyx" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/573212439041" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/luisa.beautyx" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573212439041" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <p class="copyright">
-                    <span style="color: var(--fucsia); font-weight: 600;">LU AUTHENTIC ART</span> - © 2025 Todos los derechos reservados.
-                </p>
+                <p class="copyright">© 2025 **Lu AUTHENTIC ART** - Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('menu-button').addEventListener('click', function() {
-            var nav = document.getElementById('main-nav');
-            nav.classList.toggle('open');
-            var icon = this.querySelector('i');
-            if (nav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Cierra el menú cuando se hace clic en un enlace (solo en vista móvil)
-        document.querySelectorAll('#main-nav a').forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    document.getElementById('main-nav').classList.remove('open');
-                    document.getElementById('menu-button').querySelector('i').classList.remove('fa-times');
-                    document.getElementById('menu-button').querySelector('i').classList.add('fa-bars');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
